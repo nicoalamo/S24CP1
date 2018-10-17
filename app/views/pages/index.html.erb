@@ -1,0 +1,55 @@
+
+<!-- Usé como ayuda el link que puso Stu en Slack! -->
+
+<h1>Tarea de Colores</h1>
+
+<div class="contenedor">
+  <input type="text" value="200" class="dial" data-max="255" data-width="180" id="r" data-fgColor="red">
+  <input type="text" value="200" class="dial" data-max="255" data-width="180" id="g" data-fgColor="green">
+  <input type="text" value="200" class="dial" data-max="255" data-width="180" id="b" data-fgColor="blue">
+</div>
+<h3 id="color_name">¡Cambia el color!</h3>
+<br>
+<div class="contenedor" id="color"></div>
+
+
+<script>
+
+$(function() {
+  $(".dial").knob({
+    'change': function() {
+      var color_rgb ='rgb(' + $('#r').val() + ',' + $('#g').val() + ',' + $('#b').val() + ')';
+      var color_name = 'RGB Color = (' + $('#r').val() + ', ' + $('#g').val() + ', ' + $('#b').val() + ')';
+      $('#color').css('background-color',color_rgb);
+      $('#color_name').text(color_name);
+    }
+  });
+});
+
+</script>
+
+<!-- <input id="red" type="text" value="75" class="dial" data-min="0" data-max="255">
+<input id="green" type="text" value="75" class="dial" data-min="0" data-max="255">
+<input id="blue" type="text" value="75" class="dial" data-min="0" data-max="255">
+
+<div id="color" class="contenedor">
+
+</div>
+
+
+<script>
+    $(function() {
+        $(".dial").knob();
+    });
+
+    $(".dial").knob({
+      'release' : function (v) {
+
+
+
+      }
+    });
+
+
+
+</script> -->
